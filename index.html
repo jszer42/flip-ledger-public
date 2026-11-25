@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Flip Ledger">
+<meta name="theme-color" content="#2b241b">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" href="data:image/png;base64,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">
+<title>Flip Ledger — OSRS GE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Barlow:wght@400;500;600;700&display=swap">
+<style>
+/* VOICE: a trader's ledger in a stone-and-gold game interface, calm and exact
+   IDEA: the Grand Exchange offer screen crossed with a stock ticker
+   PICTURE: the live margin table itself; item sheet with a price chart
+   COLOUR and TYPE: dark stone brown, coin gold, green/red; Pixelify Sans + Barlow
+   LAYOUT: sticky header + tabs, filters row, table; cards on phones */
+:root{color-scheme:light dark;
+--bg:light-dark(#e6dfd0,#1b1712);--panel:light-dark(#f5f1e7,#26201a);--line:light-dark(#cdbfa4,#41372a);
+--ink:light-dark(#20190f,#eee5d1);--mut:light-dark(#6a5c46,#a99b81);--gold:light-dark(#8a5d00,#ffcc33);
+--up:light-dark(#17742e,#62d47c);--dn:light-dark(#b0261d,#ff7f72);--hi:light-dark(#8a5d00,#ffcc33);--lo:light-dark(#1f6aa8,#6fb8ff);
+--stone:#2b241b}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Barlow,system-ui,sans-serif;overflow-x:clip;-webkit-text-size-adjust:100%}
+header{position:sticky;top:0;z-index:5;background:var(--stone);color:#eee5d1;padding:calc(env(safe-area-inset-top) + 10px) max(4vw,14px) 0;box-shadow:0 2px 0 #000a}
+.top{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+h1{font:700 26px/1 'Pixelify Sans',sans-serif;color:#ffcc33;margin:0;text-shadow:2px 2px 0 #000}
+h1 small{font:500 13px Barlow;color:#c8b898;text-shadow:none;margin-left:6px}
+#status{margin-left:auto;font-size:13px;color:#c8b898;display:flex;gap:8px;align-items:center}
+#status.err{color:#ff9d92}
+nav{display:flex;gap:2px;margin-top:10px;overflow-x:auto}
+nav a{flex:none;padding:10px 14px;color:#c8b898;text-decoration:none;font-weight:600;border-radius:8px 8px 0 0}
+nav a.on{background:var(--bg);color:var(--ink)}
+main{max-width:1240px;margin:0 auto;padding:16px max(4vw,14px) calc(40px + env(safe-area-inset-bottom))}
+h2{font:700 24px/1.1 'Pixelify Sans',sans-serif;margin:8px 0 12px}
+h3{font-size:18px;margin:20px 0 6px}
+button,input,select{font:inherit;font-size:16px;color:inherit}
+input,select{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:9px 10px;min-height:44px;width:100%}
+button{min-height:44px;padding:0 14px;border-radius:8px;border:1px solid var(--line);background:var(--panel);cursor:pointer;font-weight:600}
+button.pri{background:var(--gold);color:light-dark(#fff,#1b1712);border-color:transparent}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.btn-s{min-height:36px;padding:0 10px;font-size:14px}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.chip{border-radius:999px}.chip.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.filters{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:8px;margin-bottom:12px}
+.filters label{font-size:13px;color:var(--mut);display:grid;gap:3px}
+.hint{font-size:14px;color:var(--mut);margin:0 0 10px}
+table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+th{font-size:13px;color:var(--mut);font-weight:600;cursor:pointer;user-select:none;position:sticky;top:0;background:var(--panel)}
+th:first-child,td:first-child{text-align:left}
+th.s::after{content:' ▾'}th.s.asc::after{content:' ▴'}
+tbody tr{cursor:pointer}tbody tr:hover{background:light-dark(#ece4d2,#2f281f)}
+.nm{display:flex;align-items:center;gap:8px;white-space:normal;font-weight:600}
+.nm img{width:28px;height:28px;object-fit:contain;flex:none}
+.star{background:none;border:0;min-height:0;padding:2px;font-size:18px;color:var(--mut)}.star.on{color:var(--gold)}
+.up{color:var(--up)}.dn{color:var(--dn)}.mut{color:var(--mut)}
+.mem{font-size:11px;font-weight:700;color:var(--gold);border:1px solid currentColor;border-radius:4px;padding:0 4px}
+.more{display:block;margin:12px auto}
+.empty{padding:30px;text-align:center;color:var(--mut);background:var(--panel);border:1px dashed var(--line);border-radius:10px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}
+.grid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
+.stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.stat{background:var(--bg);border-radius:8px;padding:8px 10px}
+.stat b{display:block;font-size:20px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.stat span{font-size:13px;color:var(--mut)}
+.big{font:700 clamp(30px,6vw,44px)/1.05 'Pixelify Sans',sans-serif}
+/* item sheet */
+#sheet{position:fixed;inset:0;z-index:10;background:#000a;display:none;align-items:flex-end;justify-content:center}
+#sheet.open{display:flex}
+#sheet .in{background:var(--bg);width:min(900px,100%);max-height:92vh;overflow:auto;border-radius:16px 16px 0 0;padding:16px max(3vw,14px) calc(24px + env(safe-area-inset-bottom))}
+@media(min-width:900px){#sheet{align-items:center}#sheet .in{border-radius:16px}}
+.sh-top{display:flex;gap:12px;align-items:center}
+.sh-top img{width:48px;height:48px;object-fit:contain}
+.sh-top h2{margin:0}
+.x{margin-left:auto}
+.fig{position:relative;height:280px;margin-top:8px}.fig>svg{position:absolute;inset:0;width:100%;height:100%}
+.readout{font-size:14px;min-height:22px;color:var(--mut);font-variant-numeric:tabular-nums}
+.leg{display:inline-flex;align-items:center;gap:4px;margin-right:12px;font-size:13px}
+.leg i{width:14px;height:3px;display:inline-block}
+.calc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.calc label{font-size:13px;color:var(--mut);display:grid;gap:3px}
+.out{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin-top:12px}
+.learn{max-width:760px}.learn p,.learn li{max-width:68ch}
+.learn dt{font-weight:700;margin-top:10px}.learn dd{margin:0 0 0 0;color:var(--mut)}
+.log td:last-child{width:1%}
+.scroll{overflow-x:auto}
+@media(max-width:760px){.filters{grid-template-columns:1fr 1fr}.filters label:first-child{grid-column:1/-1}.grid2{grid-template-columns:1fr}.calc{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){table{font-size:14px}.stack thead{display:none}.stack tr{display:grid;grid-template-columns:1fr 1fr;padding:10px;column-gap:10px}
+.stack td{display:flow-root;border:0;padding:2px 0;text-align:right}.stack td::before{content:attr(data-l);float:left;color:var(--mut);font-size:13px}
+.stack td:first-child{grid-column:1/-1;padding-bottom:6px}.stack td:first-child::before{display:none}.stack td.hide-m{display:none}.stack tr{border-bottom:1px solid var(--line)}
+h1 small{display:none}}
+@media(prefers-reduced-motion:no-preference){#sheet.open .in{animation:up .22s ease-out}@keyframes up{from{transform:translateY(30px);opacity:0}}}
+</style>
+</head>
+<body>
+<header>
+  <div class="top"><h1>Flip Ledger <small>OSRS Grand Exchange prices</small></h1>
+    <div id="status">Loading prices…</div></div>
+  <nav id="nav"><a href="#prices">Prices</a><a href="#calculator">Calculator</a><a href="#log">Flip log</a><a href="#learn">Learn</a></nav>
+</header>
+<main>
+<section id="v-prices">
+  <div class="chips" id="presets"></div>
+  <div class="filters">
+    <label>Search items<input id="q" type="search" placeholder="e.g. rune arrow, zulrah scales" autocomplete="off"></label>
+    <label>Your cash stack<input id="budget" inputmode="decimal" placeholder="e.g. 5m"></label>
+    <label>Min volume / hr<input id="minVol" inputmode="numeric"></label>
+    <label>World<select id="mem"><option value="all">All items</option><option value="f2p">F2P only</option><option value="mem">Members only</option></select></label>
+  </div>
+  <p class="hint" id="hint"></p>
+  <div id="tbl"></div>
+</section>
+
+<section id="v-calculator" hidden>
+  <h2>Flip calculator</h2>
+  <div class="card">
+    <div class="calc">
+      <label>Buy price (each)<input id="cBuy" inputmode="decimal" placeholder="e.g. 1,250"></label>
+      <label>Sell price (each)<input id="cSell" inputmode="decimal" placeholder="e.g. 1,310"></label>
+      <label>Quantity<input id="cQty" inputmode="numeric" placeholder="e.g. 10,000"></label>
+    </div>
+    <div class="out" id="cOut"></div>
+  </div>
+  <p class="hint" style="margin-top:12px">Tax is 2% of the sell price per item, rounded down, capped at 5m per item. Items selling under 50 gp and Old school bonds aren't taxed. Accepts shorthand like 1.5k, 2m, 1b.</p>
+</section>
+
+<section id="v-log" hidden>
+  <h2>Flip log</h2>
+  <div class="card">
+    <div class="calc" style="grid-template-columns:2fr 1fr 1fr 1fr">
+      <label>Item<input id="lName" list="names" placeholder="Item name"></label>
+      <label>Bought at<input id="lBuy" inputmode="decimal"></label>
+      <label>Sold at<input id="lSell" inputmode="decimal"></label>
+      <label>Quantity<input id="lQty" inputmode="numeric"></label>
+    </div>
+    <div style="display:flex;gap:8px;margin-top:10px;align-items:center;flex-wrap:wrap"><button class="pri" id="lAdd">Add flip</button><span class="hint" id="lMsg" style="margin:0"></span></div>
+  </div>
+  <div class="out" id="lSum"></div>
+  <div id="lList" style="margin-top:12px"></div>
+  <p class="hint">Your log is saved in this browser on this device only.</p>
+  <datalist id="names"></datalist>
+</section>
+
+<section id="v-learn" class="learn" hidden>
+  <h2>How flipping works</h2>
+  <p>Flipping means buying an item on the Grand Exchange for less than other players will pay, then selling it back for more. Your profit is the gap between the two prices (the <b>margin</b>) minus the GE tax, multiplied by how many you trade.</p>
+  <h3>Reading the prices table</h3>
+  <dl>
+    <dt>Buy at</dt><dd>The latest price someone <i>instantly sold</i> at. Players dumping items fill buy offers here, so this is roughly where you place your buy offer.</dd>
+    <dt>Sell at</dt><dd>The latest price someone <i>instantly bought</i> at. Impatient buyers pay this, so this is roughly where you list your sell offer.</dd>
+    <dt>Margin</dt><dd>Sell at − buy at − tax. This is profit per item if both offers fill at those prices.</dd>
+    <dt>ROI</dt><dd>Margin ÷ buy price. Tells you how hard your money is working, regardless of item price.</dd>
+    <dt>Volume / hr</dt><dd>How many traded in the last hour (from the OSRS Wiki). Low volume means your offers may sit for hours, or never fill.</dd>
+    <dt>Buy limit</dt><dd>The most you can buy of an item in a 4-hour window, starting from your first purchase.</dd>
+    <dt>Potential</dt><dd>Margin × how many you can buy (your buy limit, or fewer if your cash stack can't cover it). It's a ceiling, not a promise.</dd>
+    <dt>Updated</dt><dd>How long since the older of the two prices last traded. Stale prices (over ~30 minutes) are often fake margins.</dd>
+  </dl>
+  <h3>A safe way to start</h3>
+  <ol>
+    <li><b>Pick high-volume items.</b> Consumables like runes, food, potions, arrows and logs trade thousands per hour. Margins are small, but offers fill fast and the risk is low.</li>
+    <li><b>Check the margin yourself.</b> Before committing, buy one item at a high price (it fills instantly at the real sell price), then sell one at a low price (it fills at the real buy price). That shows the true current margin.</li>
+    <li><b>Place your offers inside the margin.</b> Buy a little above "buy at" and sell a little below "sell at" to get filled sooner.</li>
+    <li><b>Always count the tax.</b> A 2% tax wipes out any flip with an ROI under about 2%. This app already subtracts it.</li>
+    <li><b>Spread your cash.</b> Use several GE slots on different items instead of putting your whole stack into one.</li>
+    <li><b>Log every flip.</b> Use the Flip log tab to see what actually made money, not what looked good.</li>
+  </ol>
+  <h3>Common mistakes</h3>
+  <ul>
+    <li>Chasing an item whose price just spiked. You usually buy at the top.</li>
+    <li>Trusting a huge margin on a low-volume item. Often only one trade happened, hours ago.</li>
+    <li>Forgetting the buy limit and leaving cash idle for 4 hours.</li>
+    <li>Ignoring game updates. New content and patch notes can move prices quickly.</li>
+  </ul>
+  <h3>Where the data comes from</h3>
+  <p>Prices come from the OSRS Wiki's real-time price API, which collects trades reported by RuneLite players. They refresh every minute here. They're a close estimate, not the exact state of the GE order book. See the <a href="https://oldschool.runescape.wiki/w/RuneScape:Real-time_Prices">OSRS Wiki real-time prices page</a>.</p>
+</section>
+</main>
+
+<div id="sheet" role="dialog" aria-modal="true" aria-label="Item details"><div class="in" id="sheetIn"></div></div>
+
+<script>
+{
+const API1='https://prices.runescape.wiki/api/v1/osrs',API2='https://prices.runescape.wiki/api/v2/osrs';
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const store={get(k,d){try{const v=localStorage.getItem('fl_'+k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem('fl_'+k,JSON.stringify(v))}catch(e){}}};
+const NAT=561,BOND=13190;
+const tax=(p,id)=>(id===BOND||p<50)?0:Math.min(Math.floor(p*0.02),5e6);
+const gp=n=>n==null||!isFinite(n)?'–':Math.round(n).toLocaleString('en-US');
+const short=n=>{if(n==null||!isFinite(n))return '–';const a=Math.abs(n),s=n<0?'-':'';
+  if(a>=1e9)return s+(a/1e9).toFixed(2).replace(/\.?0+$/,'')+'b';
+  if(a>=1e6)return s+(a/1e6).toFixed(a>=1e7?1:2).replace(/\.?0+$/,'')+'m';
+  if(a>=1e5)return s+Math.round(a/1e3)+'k';
+  if(a>=1e4)return s+(a/1e3).toFixed(1).replace(/\.0$/,'')+'k';
+  return s+Math.round(a).toLocaleString('en-US')};
+const parseGp=s=>{s=String(s??'').trim().toLowerCase().replace(/[,\s]|gp/g,'');const m=s.match(/^(\d*\.?\d+)([kmb]?)$/);return m?parseFloat(m[1])*({'':1,k:1e3,m:1e6,b:1e9}[m[2]]):NaN};
+const ago=s=>{if(!isFinite(s)||s<0)return '–';if(s<60)return Math.round(s)+'s';if(s<3600)return Math.round(s/60)+'m';if(s<86400)return Math.round(s/3600)+'h';return Math.round(s/86400)+'d'};
+const sign=n=>n>0?'up':n<0?'dn':'';
+const iconUrl=f=>f?'https://oldschool.runescape.wiki/images/'+encodeURIComponent(f.replace(/ /g,'_')):'';
+const img=f=>f?`<img src="${esc(iconUrl(f))}" alt="" loading="lazy" onerror="this.style.visibility='hidden'">`:'';
+
+let map=[],byId=new Map(),latest={},vol={},rows=[],shown=60,lastLoad=0,cur=null,series=[],lb='24h';
+let watch=new Set(store.get('watch',[]));
+const st=Object.assign({q:'',preset:'margin',mem:'all',minVol:'50',budget:'',sort:'margin',dir:-1},store.get('filters',{}));
+st.q='';
+const PRESETS=[
+  {k:'margin',t:'Best margins',sort:'margin',hint:'Largest profit per item after tax. Watch the volume and updated columns: big margins on slow items are often stale.'},
+  {k:'roi',t:'Best ROI',sort:'roi',hint:'Highest return on your money after tax. Good for small cash stacks.'},
+  {k:'volume',t:'High volume',sort:'v',hint:'The busiest items. Small margins, but offers fill fast. The best place to learn.'},
+  {k:'pot',t:'Most potential',sort:'pot',hint:'Margin × buy limit (or what your cash stack can afford). The most a single 4-hour cycle could make.'},
+  {k:'alch',t:'High alch',sort:'ha',hint:'Buy at the instant-buy price, cast High Level Alchemy, minus a nature rune. Positive means alching profits.'},
+  {k:'watch',t:'★ Watchlist',sort:'margin',hint:'Items you starred. Tap the star on any row to add it.'}];
+
+async function getJSON(path,v2){const r=await fetch((v2?API2:API1)+path);if(!r.ok)throw new Error('HTTP '+r.status);return r.json()}
+async function getAny(path){try{return await getJSON(path)}catch(e){return getJSON(path,true)}}
+function setStatus(html,err){const s=$('#status');s.className=err?'err':'';s.innerHTML=html}
+
+async function load(){
+  try{
+    const jobs=[getAny('/latest'),getAny('/1h')];
+    if(!map.length)jobs.push(getAny('/mapping'));
+    const [l,h,m]=await Promise.all(jobs);
+    latest=l.data||{};vol=h.data||{};
+    if(m){map=Array.isArray(m)?m:(m.data||[]);map.forEach(i=>byId.set(i.id,i));
+      $('#names').innerHTML=map.map(i=>`<option value="${esc(i.name)}">`).join('')}
+    lastLoad=Date.now();build();render();tick();
+  }catch(e){
+    setStatus(`Can't reach prices <button class="btn-s" id="retry">Retry</button>`,true);
+    $('#retry').onclick=()=>{setStatus('Loading prices…');load()};
+    if(!map.length)$('#tbl').innerHTML=`<div class="empty">Couldn't load prices from the OSRS Wiki API (${esc(e.message)}).<br>Check your connection and try again. This page must be opened from a normal web address, not inside a sandboxed preview.</div>`;
+  }
+}
+function tick(){if(!lastLoad)return;const s=(Date.now()-lastLoad)/1000;setStatus(`Updated ${s<60?'just now':ago(s)+' ago'} <button class="btn-s" id="ref">Refresh</button>`);$('#ref').onclick=()=>{setStatus('Refreshing…');load()}}
+
+function build(){
+  const now=Date.now()/1000,nat=latest[NAT]?.high;
+  rows=[];
+  for(const i of map){const p=latest[i.id];if(!p||!p.high||!p.low)continue;
+    const v=vol[i.id]||{},buy=p.low,sell=p.high,t=tax(sell,i.id),margin=sell-buy-t;
+    rows.push({id:i.id,name:i.name,mem:!!i.members,limit:i.limit||0,buy,sell,t,margin,roi:margin/buy*100,
+      v:(v.highPriceVolume||0)+(v.lowPriceVolume||0),age:now-Math.min(p.highTime||0,p.lowTime||0),
+      ha:(i.highalch&&nat)?i.highalch-sell-nat:null,icon:i.icon})}
+}
+function view(){
+  const q=st.q.trim().toLowerCase(),b=parseGp(st.budget),mv=q?0:(+st.minVol||0);
+  let r=rows.filter(x=>(!q||x.name.toLowerCase().includes(q))&&(st.mem==='all'||(st.mem==='f2p'?!x.mem:x.mem))&&x.v>=mv&&(!(b>0)||x.buy<=b));
+  if(st.preset==='watch')r=r.filter(x=>watch.has(x.id));
+  if(st.preset==='alch')r=r.filter(x=>x.ha!=null);
+  if(st.preset==='roi'&&!q)r=r.filter(x=>x.margin>0&&x.buy>=10);
+  for(const x of r){const cap=x.limit||Infinity;x.qty=b>0?Math.min(cap,Math.floor(b/x.buy)):(x.limit||0);x.pot=x.margin*x.qty}
+  const k=st.sort,d=st.dir;
+  r.sort((a,c)=>{const A=a[k]??-Infinity,C=c[k]??-Infinity;return (A>C?1:A<C?-1:0)*d});
+  return r;
+}
+const COLS=[['name','Item'],['buy','Buy at'],['sell','Sell at'],['margin','Margin'],['roi','ROI'],['v','Vol / hr'],['limit','Limit'],['pot','Potential'],['age','Updated']];
+function render(){
+  store.set('filters',{preset:st.preset,mem:st.mem,minVol:st.minVol,budget:st.budget,sort:st.sort,dir:st.dir});
+  $('#presets').innerHTML=PRESETS.map(p=>`<button class="chip btn-s ${p.k===st.preset?'on':''}" data-p="${p.k}">${esc(p.t)}</button>`).join('');
+  const P=PRESETS.find(p=>p.k===st.preset);
+  if(!rows.length)return;
+  const r=view(),cols=st.preset==='alch'?COLS.map(c=>c[0]==='pot'?['ha','Alch profit']:c):COLS;
+  $('#hint').textContent=(st.q?`Searching all items for “${st.q}”. `:'')+P.hint+` ${r.length.toLocaleString()} items.`;
+  if(!r.length){$('#tbl').innerHTML=`<div class="empty">${st.preset==='watch'&&!watch.size?'Your watchlist is empty. Tap ☆ next to any item to add it.':'No items match these filters. Try lowering the minimum volume or clearing the search.'}</div>`;return}
+  const cell=(x,k)=>{switch(k){
+    case 'name':return `<td><div class="nm"><button class="star ${watch.has(x.id)?'on':''}" data-w="${x.id}" aria-label="Watch">${watch.has(x.id)?'★':'☆'}</button>${img(x.icon)}<span>${esc(x.name)}</span>${x.mem?'':'<span class="mem" title="Free-to-play">F2P</span>'}</div></td>`;
+    case 'buy':case 'sell':return `<td>${gp(x[k])}</td>`;
+    case 'margin':return `<td class="${sign(x.margin)}">${gp(x.margin)}</td>`;
+    case 'roi':return `<td class="${sign(x.roi)}">${x.roi.toFixed(2)}%</td>`;
+    case 'v':return `<td>${gp(x.v)}</td>`;
+    case 'limit':return `<td class="hide-m">${x.limit?gp(x.limit):'?'}</td>`;
+    case 'pot':return `<td class="${sign(x.pot)}">${x.qty?short(x.pot):'–'}</td>`;
+    case 'ha':return `<td class="${sign(x.ha)}">${gp(x.ha)}</td>`;
+    case 'age':return `<td class="${x.age>1800?'dn':'mut'}">${ago(x.age)}</td>`}};
+  $('#tbl').innerHTML=`<div class="scroll"><table class="stack"><thead><tr>${cols.map(([k,t])=>`<th data-s="${k}" class="${k===st.sort?'s'+(st.dir>0?' asc':''):''}">${t}</th>`).join('')}</tr></thead>
+  <tbody>${r.slice(0,shown).map(x=>`<tr data-id="${x.id}">${cols.map(([k])=>cell(x,k)).join('')}</tr>`).join('')}</tbody></table></div>
+  ${r.length>shown?`<button class="more" id="more">Show more (${(r.length-shown).toLocaleString()} left)</button>`:''}`;
+  labelCells();
+}
+function labelCells(){for(const t of document.querySelectorAll('table.stack')){const h=[...t.rows[0].cells].map(c=>c.textContent);for(const tr of t.tBodies[0]?.rows||[])[...tr.cells].forEach((c,i)=>c.dataset.l=h[i]||'')}}
+
+/* item sheet */
+function openItem(id){
+  const i=byId.get(id),x=rows.find(r=>r.id===id);if(!i)return;cur=id;
+  const p=latest[id]||{},now=Date.now()/1000,nat=latest[NAT]?.high,b=parseGp(st.budget);
+  const qty=x?(b>0?Math.min(x.limit||Infinity,Math.floor(b/x.buy)):(x.limit||0)):0;
+  const S=(l,v,c='')=>`<div class="stat"><span>${l}</span><b class="${c}">${v}</b></div>`;
+  $('#sheetIn').innerHTML=`<div class="sh-top">${img(i.icon)}<div><h2>${esc(i.name)}</h2><div class="mut" style="font-size:14px">${esc(i.examine||'')} ${i.members?'· Members':'· Free-to-play'}</div></div>
+    <button class="x" id="close" aria-label="Close">✕</button></div>
+  <div style="display:flex;gap:8px;margin:12px 0;flex-wrap:wrap"><button id="wt">${watch.has(id)?'★ Watching':'☆ Watch'}</button>
+    <button id="toCalc">Open in calculator</button><a href="https://oldschool.runescape.wiki/w/Special:Lookup?type=item&id=${id}" style="align-self:center">OSRS Wiki page</a></div>
+  ${x?`<div class="grid2"><div class="card"><span class="mut">Margin after tax</span><div class="big ${sign(x.margin)}">${gp(x.margin)} gp</div>
+    <div class="mut">${x.roi.toFixed(2)}% ROI · ${qty?`${short(x.margin*qty)} on ${gp(qty)} items`:'no buy limit data'}</div></div>
+    <div class="stats">${S('Buy at',gp(p.low),'')}${S('Sell at',gp(p.high))}${S('Tax per item',gp(x.t))}${S('Buy limit / 4h',i.limit?gp(i.limit):'?')}
+    ${S('Volume / hr',gp(x.v))}${S('Last buy / sell',ago(now-p.lowTime)+' / '+ago(now-p.highTime))}
+    ${i.highalch?S('High alch',gp(i.highalch)):''}${i.highalch&&nat?S('Alch profit',gp(i.highalch-p.high-nat),sign(i.highalch-p.high-nat)):''}</div></div>`
+  :`<div class="empty">No recent trades for this item.</div>`}
+  <h3>Price history</h3>
+  <div class="chips">${[['24h','24 hours'],['7d','7 days'],['6m','6 months'],['1y','1 year']].map(([k,t])=>`<button class="chip btn-s ${k===lb?'on':''}" data-lb="${k}">${t}</button>`).join('')}</div>
+  <div><span class="leg"><i style="background:var(--hi)"></i>Sell at (instant buy)</span><span class="leg"><i style="background:var(--lo)"></i>Buy at (instant sell)</span></div>
+  <div class="readout" id="ro">Tap or hover the chart for prices.</div>
+  <div class="fig"><svg id="chart"></svg></div>`;
+  $('#sheet').classList.add('open');document.body.style.overflow='hidden';
+  $('#close').onclick=closeItem;
+  $('#wt').onclick=()=>{toggleWatch(id);$('#wt').textContent=watch.has(id)?'★ Watching':'☆ Watch'};
+  $('#toCalc').onclick=()=>{$('#cBuy').value=gp(p.low);$('#cSell').value=gp(p.high);$('#cQty').value=qty?gp(qty):'1';calc();closeItem();location.hash='calculator'};
+  $('#sheetIn').querySelectorAll('[data-lb]').forEach(b=>b.onclick=()=>{lb=b.dataset.lb;$('#sheetIn').querySelectorAll('[data-lb]').forEach(c=>c.classList.toggle('on',c===b));loadSeries(id)});
+  chartRO.observe($('#chart'));loadSeries(id);
+}
+function closeItem(){$('#sheet').classList.remove('open');document.body.style.overflow='';cur=null;try{chartRO.unobserve($('#chart'))}catch(e){}}
+async function loadSeries(id){
+  const sv=$('#chart');series=[];sv.innerHTML='';$('#ro').textContent='Loading history…';
+  const step={'24h':'5m','7d':'1h','6m':'6h','1y':'24h'}[lb];
+  try{let d;try{d=await getJSON(`/timeseries?timestep=${step}&id=${id}`)}catch(e){d=await getJSON(`/timeseries?id=${id}&lookback=${lb}`,true)}
+    if(cur!==id)return;
+    const arr=Array.isArray(d)?d:(d.data||d.timeseries||[]);
+    let pts=arr.map(o=>({t:o.timestamp,h:o.avgHighPrice,l:o.avgLowPrice,v:(o.highPriceVolume||0)+(o.lowPriceVolume||0)})).filter(o=>o.t);
+    const span={'24h':864e2,'7d':6048e2,'6m':1.58e7,'1y':3.16e7}[lb],end=pts.length?pts[pts.length-1].t:0;
+    series=pts.filter(o=>o.t>=end-span);
+    $('#ro').textContent=series.length?'Tap or hover the chart for prices.':'No history for this item.';draw();
+  }catch(e){if(cur===id)$('#ro').textContent='Couldn\'t load price history.'}
+}
+function draw(){
+  const sv=$('#chart');if(!sv||!series.length)return;
+  const W=sv.clientWidth,H=sv.clientHeight;if(!W)return;
+  const L=W<520?44:60,R=8,T=8,B=24,VH=Math.round((H-T-B)*.2),PH=H-T-B-VH-6;
+  const vals=series.flatMap(o=>[o.h,o.l]).filter(v=>v!=null);if(!vals.length)return;
+  let mn=Math.min(...vals),mx=Math.max(...vals);if(mn===mx){mn*=.98;mx*=1.02}const pad=(mx-mn)*.06;mn-=pad;mx+=pad;
+  const t0=series[0].t,t1=series[series.length-1].t||t0+1,vmax=Math.max(1,...series.map(o=>o.v));
+  const X=t=>L+(W-L-R)*(t1===t0?.5:(t-t0)/(t1-t0)),Y=v=>T+PH*(1-(v-mn)/(mx-mn));
+  const path=k=>{let s='',pen=false;for(const o of series){if(o[k]==null){pen=false;continue}s+=(pen?'L':'M')+X(o.t).toFixed(1)+','+Y(o[k]).toFixed(1);pen=true}return s};
+  const ticks=4,gl=[];for(let i=0;i<=ticks;i++){const v=mn+(mx-mn)*i/ticks,y=Y(v);gl.push(`<line x1="${L}" x2="${W-R}" y1="${y}" y2="${y}" stroke="var(--line)"/><text x="${L-6}" y="${y+4}" text-anchor="end" font-size="12" fill="var(--mut)">${short(v)}</text>`)}
+  const bw=Math.max(1,(W-L-R)/series.length-1),vb=series.map(o=>{const h=VH*o.v/vmax;return `<rect x="${(X(o.t)-bw/2).toFixed(1)}" y="${(H-B-h).toFixed(1)}" width="${bw.toFixed(1)}" height="${h.toFixed(1)}" fill="var(--mut)" opacity=".35"/>`}).join('');
+  const fmtT=t=>{const d=new Date(t*1e3);return lb==='24h'?d.toLocaleTimeString([],{hour:'numeric'}):d.toLocaleDateString([],{month:'short',day:'numeric'})};
+  const xl=(W<520?[0,.5,1]:[0,.25,.5,.75,1]).map(f=>{const t=t0+(t1-t0)*f,x=X(t);return `<text x="${x}" y="${H-6}" font-size="12" fill="var(--mut)" text-anchor="${f===0?'start':f===1?'end':'middle'}">${fmtT(t)}</text>`}).join('');
+  sv.innerHTML=`${gl.join('')}${vb}<path d="${path('l')}" fill="none" stroke="var(--lo)" stroke-width="2"/><path d="${path('h')}" fill="none" stroke="var(--hi)" stroke-width="2"/>${xl}<line id="cx" y1="${T}" y2="${H-B}" stroke="var(--ink)" opacity="0" stroke-dasharray="3 3"/><rect x="${L}" y="0" width="${W-L-R}" height="${H}" fill="transparent" id="hit"/>`;
+  const hit=sv.querySelector('#hit'),cx=sv.querySelector('#cx');
+  const move=e=>{const r=sv.getBoundingClientRect(),px=e.clientX-r.left;let best=series[0],bd=Infinity;for(const o of series){const d=Math.abs(X(o.t)-px);if(d<bd){bd=d;best=o}}
+    cx.setAttribute('x1',X(best.t));cx.setAttribute('x2',X(best.t));cx.setAttribute('opacity','.5');
+    const d=new Date(best.t*1e3);$('#ro').innerHTML=`${esc(d.toLocaleString([],{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'}))} · <span style="color:var(--hi)">sell ${gp(best.h)}</span> · <span style="color:var(--lo)">buy ${gp(best.l)}</span> · ${gp(best.v)} traded`};
+  hit.addEventListener('pointermove',move);hit.addEventListener('pointerdown',move);
+}
+const chartRO=new ResizeObserver(()=>draw());
+
+function toggleWatch(id){watch.has(id)?watch.delete(id):watch.add(id);store.set('watch',[...watch]);render()}
+
+/* calculator */
+function breakEven(buy,id){if(buy<50)return buy;if(buy*0.02/0.98>=5e6)return buy+5e6;let s=Math.max(buy,Math.floor(buy/0.98)-2);while(s-tax(s,id)<buy)s++;return s}
+function calc(){
+  const b=parseGp($('#cBuy').value),s=parseGp($('#cSell').value),q=parseGp($('#cQty').value)||1;
+  const S=(l,v,c='')=>`<div class="stat"><span>${l}</span><b class="${c}">${v}</b></div>`;
+  if(!(b>0)||!(s>0)){$('#cOut').innerHTML=`<div class="stat" style="grid-column:1/-1"><span>Enter a buy and sell price to see your profit after tax.</span></div>`;return}
+  const t=tax(s),each=s-b-t,tot=each*q;
+  $('#cOut').innerHTML=S('Profit',gp(tot)+' gp',sign(tot))+S('Per item',gp(each),sign(each))+S('ROI',(each/b*100).toFixed(2)+'%',sign(each))+S('Total cost',gp(b*q))+S('Tax paid',gp(t*q))+S('You receive',gp((s-t)*q))+S('Break-even sell',gp(breakEven(b)));
+}
+['cBuy','cSell','cQty'].forEach(i=>$('#'+i).addEventListener('input',calc));
+
+/* flip log */
+let log=store.get('log',[]);
+function renderLog(){
+  const tot=log.reduce((a,f)=>a+f.p,0),inv=log.reduce((a,f)=>a+f.b*f.q,0),wins=log.filter(f=>f.p>0).length;
+  const S=(l,v,c='')=>`<div class="stat"><span>${l}</span><b class="${c}">${v}</b></div>`;
+  $('#lSum').innerHTML=S('Total profit',short(tot)+' gp',sign(tot))+S('Flips',gp(log.length))+S('Winning flips',log.length?Math.round(wins/log.length*100)+'%':'–')+S('Avg ROI',inv?(tot/inv*100).toFixed(2)+'%':'–',sign(tot));
+  $('#lList').innerHTML=log.length?`<div class="scroll"><table class="stack log"><thead><tr><th>Item</th><th>Date</th><th>Bought</th><th>Sold</th><th>Qty</th><th>Profit</th><th></th></tr></thead><tbody>${log.map((f,i)=>`<tr><td>${esc(f.n)}</td><td class="mut">${esc(new Date(f.d).toLocaleDateString())}</td><td>${gp(f.b)}</td><td>${gp(f.s)}</td><td>${gp(f.q)}</td><td class="${sign(f.p)}">${gp(f.p)}</td><td><button class="btn-s" data-del="${i}" aria-label="Delete">✕</button></td></tr>`).join('')}</tbody></table></div>`:`<div class="empty">No flips logged yet. Add your first one above.</div>`;
+  labelCells();
+}
+$('#lAdd').onclick=()=>{
+  const n=$('#lName').value.trim(),b=parseGp($('#lBuy').value),s=parseGp($('#lSell').value),q=parseGp($('#lQty').value);
+  if(!n||!(b>0)||!(s>0)||!(q>0)){$('#lMsg').textContent='Fill in all four fields.';return}
+  const it=map.find(i=>i.name.toLowerCase()===n.toLowerCase());
+  log.unshift({n:it?it.name:n,b,s,q,p:(s-b-tax(s,it?.id))*q,d:Date.now()});store.set('log',log);
+  ['lName','lBuy','lSell','lQty'].forEach(i=>$('#'+i).value='');$('#lMsg').textContent='Logged.';renderLog();
+};
+$('#lList').addEventListener('click',e=>{const b=e.target.closest('[data-del]');if(!b)return;
+  if(b.dataset.armed){log.splice(+b.dataset.del,1);store.set('log',log);renderLog()}else{b.dataset.armed=1;b.textContent='Delete?';setTimeout(()=>{if(b.isConnected){delete b.dataset.armed;b.textContent='✕'}},3000)}});
+
+/* events */
+$('#presets').addEventListener('click',e=>{const b=e.target.closest('[data-p]');if(!b)return;const P=PRESETS.find(p=>p.k===b.dataset.p);st.preset=P.k;st.sort=P.sort;st.dir=-1;shown=60;render()});
+$('#tbl').addEventListener('click',e=>{
+  const w=e.target.closest('[data-w]');if(w){e.stopPropagation();toggleWatch(+w.dataset.w);return}
+  const th=e.target.closest('th[data-s]');if(th){const k=th.dataset.s;if(st.sort===k)st.dir*=-1;else{st.sort=k;st.dir=k==='name'||k==='age'?1:-1}render();return}
+  if(e.target.id==='more'){shown+=100;render();return}
+  const tr=e.target.closest('tr[data-id]');if(tr)openItem(+tr.dataset.id)});
+let qt;$('#q').addEventListener('input',e=>{clearTimeout(qt);qt=setTimeout(()=>{st.q=e.target.value;shown=60;render()},150)});
+$('#budget').addEventListener('change',e=>{st.budget=e.target.value;render()});
+$('#minVol').addEventListener('change',e=>{st.minVol=e.target.value;render()});
+$('#mem').addEventListener('change',e=>{st.mem=e.target.value;render()});
+$('#budget').value=st.budget;$('#minVol').value=st.minVol;$('#mem').value=st.mem;
+$('#sheet').addEventListener('click',e=>{if(e.target.id==='sheet')closeItem()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&cur)closeItem()});
+
+const VIEWS=['prices','calculator','log','learn'];
+function route(){const v=VIEWS.includes(location.hash.slice(1))?location.hash.slice(1):'prices';
+  VIEWS.forEach(n=>$('#v-'+n).hidden=n!==v);document.querySelectorAll('#nav a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+v));window.scrollTo(0,0)}
+window.addEventListener('hashchange',route);route();
+
+render();calc();renderLog();load();
+setInterval(()=>{if(!document.hidden)load()},60000);
+setInterval(tick,15000);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden&&Date.now()-lastLoad>60000)load()});
+}
+</script>
+</body>
+</html>
